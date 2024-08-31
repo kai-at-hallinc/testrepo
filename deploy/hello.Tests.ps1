@@ -4,11 +4,11 @@ Import-Module "$moduleRoot\deploy\hello-world.psm1" -Force
 Describe 'Use-HelloWorld' {
 
   It "Runs without a name parameter" {
-    { Use-HelloWorld } | Should -Not Throw
+    { Use-HelloWorld } | Should -Not -Throw
   }
 
   It "Runs when passing a name parameters" {
-    { Use-HelloWorld -Name 'Github' } | Should -Not Throw
+    { Use-HelloWorld -Name 'Github' } | Should -Not -Throw
   }
 
   It "Returns the proper output" {
