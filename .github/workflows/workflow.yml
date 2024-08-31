@@ -4,17 +4,14 @@ on:
   push:
     branches:
       - main  
-      
+
 jobs:
   unit-test:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
       - run: |
-          $container = New-PesterContainer `
-            -Path 'deploy/hello.Tests.ps1' `
-          Invoke-Pester `
-            -Container $container `
-            -CI
+          $container = New-PesterContainer -Path 'deploy/hello.Tests.ps1'
+          Invoke-Pester -Container $container -CI
         name: Run test
         shell: pwsh
