@@ -8,13 +8,13 @@ Describe 'Use-HelloWorld' {
   }
 
   It "Runs when passing a name parameters" {
-    { Use-HelloWorld -Name 'Azure DevOps' } | Should Not Throw
+    { Use-HelloWorld -Name 'Github' } | Should Not Throw
   }
 
   It "Returns the proper output" {
-    $result_param = Use-HelloWorld -Name 'Azure DevOps'
-    $result_param | Should Be "Hello, Azure DevOps!"
+    $result_param = Use-HelloWorld -Name 'Github'
+    $result_param | Should -Be "Hello, Github!"
     $result = Use-HelloWorld
-    $result | Should Be "Hello, World!"
+    $result | Should -Be "Hello, World!"
   }
 }
